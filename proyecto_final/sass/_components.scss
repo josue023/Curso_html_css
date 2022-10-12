@@ -1,0 +1,110 @@
+$color-main: #0075ff;
+
+@mixin btn-base {
+    padding: .25rem 1.5rem;
+    border-radius: .25rem;
+}
+
+@mixin btn-sm-modify {
+    font-size: .75rem;
+    padding: 0.1rem 1rem;
+}
+
+//estilos de los botones
+.btn-main{
+    @include btn-base();
+    background-color: $color-main;
+    color: white;
+    border: solid 1px $color-main;
+
+    &:hover{
+        background-color: white;
+        color: $color-main;
+    }
+
+    &-s{
+        @extend .btn-main;
+        @include btn-sm-modify();
+    }
+}
+
+.btn-sec{
+    @include btn-base();
+    background-color: transparent;
+    color: black;
+    border: none;
+
+    &:hover{
+        background-color: white;
+        color: #888;
+    }
+
+    &-s{
+        @extend .btn-sec;
+        @include btn-sm-modify();
+    }
+}
+
+//estilos del menu nav
+.main-menu{
+    margin-bottom: 0;
+    
+    li{
+        font-size: .85rem;
+        list-style: none;
+        display: inline;
+        margin-right: 2rem;
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+//estilos de los iconos del features
+.icon-sm{
+    i{
+        font-size: 1.25rem;
+        padding: .4rem .65rem;
+        color: $color-main;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00000040;
+    }
+}
+
+//estilos del feature
+.benefit{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    i{
+        color: $color-main;
+        font-size: 7.5rem;
+    }
+    .description{
+        .title{
+            font-size: 2rem;
+        }
+        .text{
+            color: #888;
+            font-weight: 600;
+        }
+
+    }
+    .cta{
+        margin-top: 3rem;
+        color: $color-main;
+        font-weight: 600;
+    }
+
+}
+
+.onboard{
+    @extend .benefit;
+}
+
+
